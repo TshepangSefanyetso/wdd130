@@ -1,9 +1,9 @@
-/* CSS Variables for colors & fonts */
+/* CSS Variables */
 :root {
-  --primary-color: #005f73;   /* Deep Blue */
-  --accent-color: #0a9396;    /* Teal */
-  --cta-color: #ee9b00;       /* Orange */
-  --background-color: #f7f7f7; /* Light Grey */
+  --primary-color: #005f73;
+  --accent-color: #0a9396;
+  --cta-color: #ee9b00;
+  --background-color: #f7f7f7;
   --body-font: 'Open Sans', sans-serif;
   --heading-font: 'Montserrat', sans-serif;
 }
@@ -18,131 +18,164 @@
 /* Body */
 body {
   font-family: var(--body-font);
-  color: var(--primary-color);
   background-color: var(--background-color);
+  color: var(--primary-color);
   line-height: 1.6;
 }
 
-/* Container width and center */
-header, main, footer {
-  width: 840px;
+/* Layout Container */
+.wrapper {
+  max-width: 960px;
   margin: 0 auto;
+  padding: 16px;
 }
 
 /* Header */
 header {
   background-color: var(--primary-color);
-  color: var(--background-color);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 24px;
+  flex-wrap: wrap;
 }
 
 header img {
   height: 50px;
 }
 
-/* Navigation links */
+/* Navigation */
 nav a {
-  color: var(--accent-color);
+  color: white;
   text-decoration: none;
   margin-left: 20px;
-  font-weight: 600;
-  font-family: var(--body-font);
+  font-weight: bold;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: var(--cta-color);
-  text-decoration: underline;
 }
 
-/* Headings */
-h1, h2 {
-  font-family: var(--heading-font);
-  color: var(--primary-color);
-}
-
-/* Spacing */
-nav, p, section, article {
-  margin: 16px;
-  padding: 8px;
-}
-
-/* Hero container */
+/* Hero Section */
 .hero {
   position: relative;
-  margin-bottom: 32px;
+  margin: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* Hero background image */
 .hero img {
-  display: block;
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  display: block;
 }
 
-/* Hero title overlay */
 .hero h1 {
   position: absolute;
   top: 20px;
-  width: 100%;
-  padding: 16px;
+  left: 0;
+  right: 0;
   text-align: center;
-  opacity: 0.8;
-  background-color: var(--primary-color);
   color: white;
+  background-color: rgba(0, 95, 115, 0.8);
+  padding: 16px;
+  font-family: var(--heading-font);
   font-size: 2.5rem;
-  font-weight: 700;
-  border-radius: 0 0 12px 12px;
-  box-sizing: border-box;
 }
 
-/* Hero article overlay */
+/* Article Box in Hero */
 .hero article {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: var(--background-color);
-  padding: 16px;
-  width: 320px;
-  opacity: 0.95;
-  border-radius: 12px;
-  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+  background-color: white;
   color: var(--primary-color);
+  padding: 16px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Article image floated right */
 .hero article img {
   float: right;
-  width: 125px;
-  margin-left: 12px;
+  width: 100px;
+  margin-left: 10px;
   border-radius: 8px;
-  box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
 }
 
-/* Footer styling */
+/* Headings */
+h2 {
+  font-family: var(--heading-font);
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: var(--accent-color);
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 32px;
+  padding: 0 8px;
+}
+
+section img {
+  width: 180px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
 footer {
   text-align: center;
-  margin: 24px auto;
-  padding: 12px 0;
+  padding: 16px;
+  background-color: #e0e0e0;
   font-size: 0.9rem;
   color: var(--primary-color);
-  border-top: 1px solid var(--primary-color);
+  border-top: 2px solid var(--primary-color);
+  margin-top: 40px;
 }
 
-/* Social media links container */
-.socialmedia a {
-  text-decoration: none; /* remove underline */
-  margin: 0 8px;
-  display: inline-block;
+/* Social Media Links */
+.socialmedia {
+  margin-top: 8px;
 }
 
 .socialmedia a img {
-  vertical-align: middle;
   width: 32px;
   height: 32px;
-  /* Optional: colorize icons or add filter */
+  margin: 0 8px;
+  vertical-align: middle;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  header, .wrapper {
+    padding: 12px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero article {
+    position: static;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  section img {
+    width: 100%;
+    margin: 12px 0;
+  }
 }
